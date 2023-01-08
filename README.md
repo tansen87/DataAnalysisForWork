@@ -22,7 +22,7 @@ Txt -> 选择筛选条件
 ScreenData -> 开始筛选
 ```
 #### Vlookup
-![image](https://user-images.githubusercontent.com/98570790/211199529-4dfebfb0-f4fe-4be9-aeb9-db08470560f6.png)
+<img width="182" alt="image" src="https://user-images.githubusercontent.com/98570790/211199741-7d976094-3445-4806-8862-5a8c137b4a52.png">
 ```
 InitTable -> 初始表
 MappingTable -> mapping表
