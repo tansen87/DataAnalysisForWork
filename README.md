@@ -37,4 +37,5 @@ SavePath -> 合并文件的保存路径
 Merge -> 开始合并
 ```
 
+### Thanks
 This project is based on https://github.com/gmarull/qtmodern
