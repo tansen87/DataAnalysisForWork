@@ -12,4 +12,29 @@ It contains data screen, vlookup and merge excel file.
 2. python app.py
 ```
 
+#### File
+<img width="143" alt="image" src="https://user-images.githubusercontent.com/98570790/211199433-fc93d84d-ec05-4ce5-8242-a0ace2f8a018.png">
+```
+Open -> 打开文件
+View -> 查看数据
+Path -> 选择文件保存路径
+Txt -> 选择筛选条件
+ScreenData -> 开始筛选
+```
+#### Vlookup
+![image](https://user-images.githubusercontent.com/98570790/211199529-4dfebfb0-f4fe-4be9-aeb9-db08470560f6.png)
+```
+InitTable -> 初始表
+MappingTable -> mapping表
+Check -> 检查连接条件
+vlookup -> 开始V表
+```
+#### Merge
+<img width="182" alt="image" src="https://user-images.githubusercontent.com/98570790/211199628-b21f2335-abb9-49d2-92f9-9b2c43d0046a.png">
+```
+MergePath -> 待合并的xlsx和csv文件路径
+SavePath -> 合并文件的保存路径
+Merge -> 开始合并
+```
+
 This project is based on https://github.com/gmarull/qtmodern
