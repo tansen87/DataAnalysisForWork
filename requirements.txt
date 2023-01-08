@@ -1,3 +1,3 @@
-qtpy>=1.3.1
+qtmodern
 pandas
 numpy
