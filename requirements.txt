@@ -1,3 +1,4 @@
 qtmodern
+PySide6
 pandas
 numpy
