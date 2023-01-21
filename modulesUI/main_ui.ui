@@ -177,13 +177,15 @@ p, li { white-space: pre-wrap; }
    </property>
    <widget class="QMenu" name="menuTest">
     <property name="title">
-     <string>File</string>
+     <string>Screen</string>
     </property>
     <addaction name="actionFile"/>
     <addaction name="actionCheckData"/>
-    <addaction name="actionSave"/>
+    <addaction name="actionSinglePath"/>
+    <addaction name="actionMultiplePath"/>
     <addaction name="actionTxt"/>
-    <addaction name="actionScreenData"/>
+    <addaction name="actionSingleScreen"/>
+    <addaction name="actionMultipleScreen"/>
    </widget>
    <widget class="QMenu" name="helpBtn">
     <property name="title">
@@ -209,9 +211,17 @@ p, li { white-space: pre-wrap; }
     <addaction name="actionMergeSavePath"/>
     <addaction name="actionMergeFile"/>
    </widget>
+   <widget class="QMenu" name="menuPivot">
+    <property name="title">
+     <string>Pivot</string>
+    </property>
+    <addaction name="actionOpenPivotTable"/>
+    <addaction name="actionPivot"/>
+   </widget>
    <addaction name="menuTest"/>
    <addaction name="helpBtn"/>
    <addaction name="menuMerge"/>
+   <addaction name="menuPivot"/>
    <addaction name="menuStyle"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
@@ -259,9 +269,9 @@ p, li { white-space: pre-wrap; }
     <string>Dark</string>
    </property>
   </action>
-  <action name="actionSave">
+  <action name="actionSinglePath">
    <property name="text">
-    <string>Path</string>
+    <string>SinglePath</string>
    </property>
   </action>
   <action name="actionTxt">
@@ -274,9 +284,9 @@ p, li { white-space: pre-wrap; }
     <string>View</string>
    </property>
   </action>
-  <action name="actionScreenData">
+  <action name="actionSingleScreen">
    <property name="text">
-    <string>ScreenData</string>
+    <string>SingleScreen</string>
    </property>
   </action>
   <action name="actionVlookup">
@@ -322,6 +332,26 @@ p, li { white-space: pre-wrap; }
   <action name="actionMergeSavePath">
    <property name="text">
     <string>SavePath</string>
+   </property>
+  </action>
+  <action name="actionMultiplePath">
+   <property name="text">
+    <string>MultiplePath</string>
+   </property>
+  </action>
+  <action name="actionMultipleScreen">
+   <property name="text">
+    <string>MultipleScreen</string>
+   </property>
+  </action>
+  <action name="actionOpenPivotTable">
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="actionPivot">
+   <property name="text">
+    <string>Pivot</string>
    </property>
   </action>
  </widget>
