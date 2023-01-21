@@ -9,7 +9,7 @@ from qtpy.QtWidgets import QApplication, QMainWindow, QFileDialog
 
 import qtmodern.styles
 import qtmodern.windows
-from modulesUI.ui_main import Ui_MainWindow
+from modulesUI.ui_main_1 import Ui_MainWindow
 from utils import (record_logs, view_data, screen_data, merge_data, concat_data)
 
 
@@ -26,10 +26,12 @@ class MainWindow(QMainWindow, Ui_MainWindow, QtWidgets.QTableView):
         self.actionDark.triggered.connect(self.darkTheme)  # load dark theme
 
         self.actionFile.triggered.connect(self.openfile)  # connect openfile function
-        self.actionSave.triggered.connect(self.save_path)  # connect save_path function
+        self.actionSinglePath.triggered.connect(self.save_path)  # connect save_path function
+        self.actionMultiplePath.triggered.connect(self.merge_save_path)  # connect merge_save_path function
         self.actionTxt.triggered.connect(self.open_target)  # connect open_target function
         self.actionCheckData.triggered.connect(self.view_data)  # connect view_data function
-        self.actionScreenData.triggered.connect(self.screen_data)  # connect screen_data function
+        self.actionSingleScreen.triggered.connect(self.screen_data)  # connect screen_data function
+        self.actionMultipleScreen.triggered.connect(self.screen_data_mul)  # connect screen_data_mul function
 
         self.actionInitTable.triggered.connect(self.open_init_table)  # connect open_init_table function
         self.actionMappingTable.triggered.connect(self.open_map_table)  # connect open_map_table function
@@ -248,6 +250,22 @@ class MainWindow(QMainWindow, Ui_MainWindow, QtWidgets.QTableView):
             self.thread_screen_data.signal_desc.connect(self.view_display)
             self.thread_screen_data.moveToThread(self.thread_screen_data)
             self.thread_screen_data.start()
+        except Exception as e:
+            err = f"Error: {e}"
+            self.recoedLog.setText(err)
+
+    def screen_data_mul(self):
+        """ 筛分数据, 开启子线程 """
+        try:
+            self.thread_screen_data_mul = screen_data.ScreenDataMulThread(
+                self.file,
+                self.targets,
+                self.column_value,
+                self.file_out_mer)
+            self.thread_screen_data_mul.signal_trans.connect(self.update_text)
+            self.thread_screen_data_mul.signal_desc.connect(self.view_display)
+            self.thread_screen_data_mul.moveToThread(self.thread_screen_data_mul)
+            self.thread_screen_data_mul.start()
         except Exception as e:
             err = f"Error: {e}"
             self.recoedLog.setText(err)
