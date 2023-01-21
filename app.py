@@ -9,7 +9,7 @@ from qtpy.QtWidgets import QApplication, QMainWindow, QFileDialog
 
 import qtmodern.styles
 import qtmodern.windows
-from modulesUI.ui_main_1 import Ui_MainWindow
+from modulesUI.ui_main import Ui_MainWindow
 from utils import (record_logs, view_data, screen_data, merge_data, concat_data)
 
 
