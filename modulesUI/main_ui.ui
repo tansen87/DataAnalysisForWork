@@ -193,7 +193,6 @@ p, li { white-space: pre-wrap; }
     </property>
     <addaction name="actionInitTable"/>
     <addaction name="actionMappingTable"/>
-    <addaction name="actionCheck"/>
     <addaction name="actionMerge"/>
    </widget>
    <widget class="QMenu" name="menuStyle">
@@ -215,13 +214,19 @@ p, li { white-space: pre-wrap; }
     <property name="title">
      <string>Pivot</string>
     </property>
-    <addaction name="actionOpenPivotTable"/>
-    <addaction name="actionPivot"/>
+    <addaction name="actionPivotWindow"/>
+   </widget>
+   <widget class="QMenu" name="menuPlot">
+    <property name="title">
+     <string>Visualization</string>
+    </property>
+    <addaction name="actionPlot"/>
    </widget>
    <addaction name="menuTest"/>
    <addaction name="helpBtn"/>
    <addaction name="menuMerge"/>
    <addaction name="menuPivot"/>
+   <addaction name="menuPlot"/>
    <addaction name="menuStyle"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
@@ -344,14 +349,24 @@ p, li { white-space: pre-wrap; }
     <string>MultipleScreen</string>
    </property>
   </action>
-  <action name="actionOpenPivotTable">
+  <action name="actionPivotWindow">
    <property name="text">
-    <string>Open</string>
+    <string>PivotWindow</string>
    </property>
   </action>
   <action name="actionPivot">
    <property name="text">
     <string>Pivot</string>
+   </property>
+  </action>
+  <action name="actionPlotDemo">
+   <property name="text">
+    <string>demo</string>
+   </property>
+  </action>
+  <action name="actionPlot">
+   <property name="text">
+    <string>VisualWindow</string>
    </property>
   </action>
  </widget>
