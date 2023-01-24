@@ -1,7 +1,7 @@
 # DataAnalysisForWork
 
 ```
-It contains data screen, vlookup and merge excel file.
+It contains data screen, vlookup, merge table, pivot table and data visualization.
 ```
 <img width="1280" alt="image" src="https://user-images.githubusercontent.com/98570790/214305423-5ce867e4-a1db-4fd8-9f91-ed4918d308f8.png">
 
