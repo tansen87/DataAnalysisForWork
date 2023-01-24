@@ -9,14 +9,13 @@ from qtpy.QtWidgets import QApplication, QMainWindow, QFileDialog
 
 import qtmodern.styles
 import qtmodern.windows
-from modulesUI.ui_main import Ui_MainWindow
 from utils import (record_logs, view_data, screen_data, merge_data, concat_data)
-
+from modulesWindow import visualization_window, pivot_window
 
 _UI = join(dirname(abspath(__file__)), 'modulesUI/main_ui.ui')
 
 
-class MainWindow(QMainWindow, Ui_MainWindow, QtWidgets.QTableView):
+class MainWindow(QMainWindow, QtWidgets.QTableView):
     def __init__(self):
         super(MainWindow, self).__init__()
         uic.loadUi(_UI, self)  # load the ui into self
@@ -36,14 +35,25 @@ class MainWindow(QMainWindow, Ui_MainWindow, QtWidgets.QTableView):
         self.actionInitTable.triggered.connect(self.open_init_table)  # connect open_init_table function
         self.actionMappingTable.triggered.connect(self.open_map_table)  # connect open_map_table function
         self.actionMerge.triggered.connect(self.merge_data)  # connect merge_data function
-        self.actionCheck.triggered.connect(self.check)  # connect check function
 
         self.actionMergePath.triggered.connect(self.save_path)  # connect save_path function
         self.actionMergeSavePath.triggered.connect(self.merge_save_path)  # connect merge_save_path function
         self.actionMergeFile.triggered.connect(self.concat_data)  # connect concat_data function
 
+        self.actionPlot.triggered.connect(self.visual_window)  # connect visual_window
+        self.actionPivotWindow.triggered.connect(self.pivot_window)  # connect pivot_window
+
         self.progress_bar()
         self.col_display()
+
+        # 实时更新lineEdit的值
+        self.leftLineEdit.textEdited[str].connect(lambda: self.real_time_updateValue())
+        self.rightLineEdit.textEdited[str].connect(lambda: self.real_time_updateValue())
+
+    def real_time_updateValue(self):
+        # 实时更新lineEdit的值
+        self.left = self.leftLineEdit.text()
+        self.right = self.rightLineEdit.text()
 
     def keyPressEvent(self, event):  # 重写键盘监听事件
         # 监听 CTRL+C 组合键，实现复制数据到粘贴板
@@ -204,21 +214,6 @@ class MainWindow(QMainWindow, Ui_MainWindow, QtWidgets.QTableView):
         self.leftLineEdit.setPlaceholderText("init表列名")
         self.rightLineEdit.setPlaceholderText("mapping表列名")
 
-    def check(self):
-        try:
-            self.left = self.leftLineEdit.text()
-            self.right = self.rightLineEdit.text()
-            if self.left == "" or self.right == "":
-                col_ = f"Error: init表列名和mapping表列名不能为空"
-                self.recoedLog.setText(col_)
-            else:
-                col_ = f"init column: {self.left}, map column: {self.right}"
-                self.tips.setText(col_)
-            self.log.write_log(col_)
-        except Exception as e:
-            err = f"Error: {e}"
-            self.tips.setText(err)
-
     def view_data(self):
         """ 查看excel数据, 开启子线程 """
         try:
@@ -306,13 +301,31 @@ class MainWindow(QMainWindow, Ui_MainWindow, QtWidgets.QTableView):
         """ 更新 view_data() screen_data() 的输出 """
         self.recoedLog.append(text)
 
+    def visual_window(self):
+        try:
+            self.visual_win = qtmodern.windows.ModernWindow(visualization_window.VisualWindow())
+            self.visual_win.setWindowIcon(QIcon("modulesUI/img/visual.svg"))
+            self.visual_win.setWindowTitle("Visualization")
+            self.visual_win.show()
+        except Exception as e:
+            print(e)
+
+    def pivot_window(self):
+        try:
+            self.pivot_win = qtmodern.windows.ModernWindow(pivot_window.PivotWindow())
+            self.pivot_win.setWindowIcon(QIcon("modulesUI/img/pivot.svg"))
+            self.pivot_win.setWindowTitle("Pivot")
+            self.pivot_win.show()
+        except Exception as e:
+            print(e)
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
 
     qtmodern.styles.dark(app)
     mw = qtmodern.windows.ModernWindow(MainWindow())
-    mw.setWindowIcon(QIcon("modulesUI/excel.svg"))
+    mw.setWindowIcon(QIcon("modulesUI/img/excel.svg"))
     mw.setWindowTitle("ExcelTools")
     mw.show()
 
