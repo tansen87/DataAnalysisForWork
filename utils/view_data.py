@@ -1,6 +1,6 @@
 import os
 
-from qtpy.QtCore import QThread, Signal
+from qtpy.QtCore import QThread, Signal, QModelIndex
 from qtpy.QtGui import QStandardItemModel, QStandardItem
 
 from utils.record_logs import RecordLog
@@ -39,10 +39,6 @@ class ViewDataThread(QThread):
             rows = df.shape[0]
             cols = df.shape[1]
 
-            excel_detail = f"rows: {rows}, cols: {cols}."
-            self.write(excel_detail)
-            self.log.write_log(excel_detail)
-
             col_names = [col for col in df.columns]
 
             # 将list转换为str
@@ -75,5 +71,8 @@ class ViewDataThread(QThread):
             err = f"Error: {e}"
             self.signal_desc.emit(err)
         else:
+            excel_detail = f"rows: {rows}, cols: {cols}."
+            self.write(excel_detail)
+            self.log.write_log(excel_detail)
             success_tips = f"{os.path.basename(self.file_name)} read successfully"
             self.signal_desc.emit(success_tips)

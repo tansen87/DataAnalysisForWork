@@ -1,4 +1,5 @@
 import datetime
+import os
 
 
 class RecordLog:
@@ -7,6 +8,8 @@ class RecordLog:
 
     @staticmethod
     def write_log(logs) -> None:
+        if not os.path.exists("examples"):
+            os.mkdir("examples")
         with open("examples/logs.txt", "a+", encoding="utf-8") as fp:
             now_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             re_logs = f"{now_time} -> {str(logs)}\n"
