@@ -3,36 +3,40 @@
 ```
 It contains data screen, vlookup and merge excel file.
 ```
-<img width="1280" alt="MainWindow" src="https://user-images.githubusercontent.com/98570790/211193186-3431c0dc-14cc-4ec3-b7ac-d218169ce28d.png">
+<img width="1280" alt="image" src="https://user-images.githubusercontent.com/98570790/214305423-5ce867e4-a1db-4fd8-9f91-ed4918d308f8.png">
+
+![image](https://user-images.githubusercontent.com/98570790/214309303-54ae9069-0111-4343-858d-f4d5b7c65c09.png)
+
 
 ### Usage
 
 
 ```
-1. python -m pip install requirements.txt
+1. python -m pip install -r requirements.txt
 2. python app.py
 ```
 
-#### File
+#### Screen
 
-<img width="143" alt="image" src="https://user-images.githubusercontent.com/98570790/211199433-fc93d84d-ec05-4ce5-8242-a0ace2f8a018.png">
+![image](https://user-images.githubusercontent.com/98570790/214305778-c84ef858-d629-4af9-8a11-be758287d4f5.png)
 
 ```
 Open -> 打开文件
 View -> 查看数据
-Path -> 选择文件保存路径
-Txt -> 选择筛选条件
-ScreenData -> 开始筛选
+SiglePath -> 简单筛选文件保存路径
+MultiplePath -> 复杂筛选文件保存路径
+Txt -> 筛选条件
+SingleScreen -> 简单筛选
+MultipleScreen -> 复杂筛选
 ```
 #### Vlookup
+<img width="254" alt="image" src="https://user-images.githubusercontent.com/98570790/214306888-9b7828c3-88c5-43a8-ac77-ba147126b5e3.png">
 
-![image](https://user-images.githubusercontent.com/98570790/211200270-b5d03448-b6c7-4c2d-928f-107b079cc369.png)
 
 ```
-InitTable -> 初始表
+InitTable -> 待V的表
 MappingTable -> mapping表
-Check -> 检查连接条件
-vlookup -> 开始V表
+vlookup -> vlookup
 ```
 #### Merge
 
@@ -42,6 +46,48 @@ vlookup -> 开始V表
 MergePath -> 待合并的xlsx和csv文件路径
 SavePath -> 合并文件的保存路径
 Merge -> 开始合并
+```
+#### Pivot
+![image](https://user-images.githubusercontent.com/98570790/214307122-80b716a1-182b-40a2-8193-deaa1bc08524.png)
+
+```
+PivotWindow -> 打开pivot窗口
+```
+
+#### Visualization
+![image](https://user-images.githubusercontent.com/98570790/214307402-a8fc2b62-7e35-42c8-ae51-f0f849fb3c44.png)
+
+```
+VisualWindow -> 打开visual窗口
+```
+
+#### pivot Window
+![image](https://user-images.githubusercontent.com/98570790/214307773-7cc47372-0c98-4021-a691-284c020695dc.png)
+
+```
+open -> 打开文件
+save -> 保存路径
+view -> 查看数据
+pivot -> 数据透视
+
+index -> excel的行(rows)
+columns -> exccel的列(columns)
+values -> excel的值(values)
+```
+
+#### visualization window
+![image](https://user-images.githubusercontent.com/98570790/214308639-dface7e9-9d5a-446b-9fe7-58579e8c4a92.png)
+
+```
+open -> 打开文件
+save -> 保存路径
+view -> 查看数据
+pyecharts -> 开始绘图
+plot -> 查看绘图
+
+X-axis -> x轴
+Y-axis -> Y轴
+Title -> 图片title名
 ```
 
 #### Thanks
