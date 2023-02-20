@@ -87,4 +87,4 @@ Title -> 图片title名
 
 #### Thanks
 
-This project is based on [qtmodern](https://github.com/gmarull/qtmodern)
+* This project is based on [qtmodern](https://github.com/gmarull/qtmodern).
