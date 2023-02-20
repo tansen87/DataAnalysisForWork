@@ -1,20 +1,15 @@
 # DataAnalysisForWork
 
-```
-It contains data screen, vlookup, merge table, pivot table and data visualization.
-```
+> It contains data screen, vlookup, merge table, pivot table and data visualization.
+
 <img width="1280" alt="image" src="https://user-images.githubusercontent.com/98570790/214305423-5ce867e4-a1db-4fd8-9f91-ed4918d308f8.png">
 
 ![image](https://user-images.githubusercontent.com/98570790/214309303-54ae9069-0111-4343-858d-f4d5b7c65c09.png)
 
 
 ### Usage
-
-
-```
 1. python -m pip install -r requirements.txt
 2. python app.py
-```
 
 #### Screen
 
@@ -92,4 +87,4 @@ Title -> 图片title名
 
 #### Thanks
 
-This project is based on https://github.com/gmarull/qtmodern
+This project is based on [qtmodern](https://github.com/gmarull/qtmodern)
